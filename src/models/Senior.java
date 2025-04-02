@@ -7,8 +7,11 @@ package models;
 /**
  *
  * @author juans
+ *
+ *
+ * Class representing a Senior user.
  */
-public class Senior extends User {
+class Senior extends User {
     public Senior() {
         this.type = "Senior";
         this.discount = 1000;

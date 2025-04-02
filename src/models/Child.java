@@ -7,7 +7,18 @@ package models;
 /**
  *
  * @author juans
+ *
+ *
+ * Class representing a Child user.
  */
-public class Child {
+class Child extends User {
+    public Child() {
+        this.type = "Child";
+        this.discount = 500;
+    }
     
+    @Override
+    public int calculateDiscount() {
+        return this.discount;
+    }
 }

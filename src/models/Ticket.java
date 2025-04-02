@@ -7,7 +7,27 @@ package models;
 /**
  *
  * @author juans
+ *
+ * Class representing a Ticket.
  */
-public class Ticket {
+class Ticket {
+    private Movie movie;
+    private Function function;
+    private int finalPrice;
     
+    public Ticket(Movie movie, Function function, User user) {
+        this.movie = movie;
+        this.function = function;
+        int basePrice = movie.calculatePrice();
+        int discountedPrice = function.applyDiscount(basePrice);
+        this.finalPrice = discountedPrice - user.calculateDiscount();
+    }
+    
+    /**
+     * Gets the final price of the ticket.
+     * @return the final price.
+     */
+    public int getFinalPrice() {
+        return finalPrice;
+    }
 }

@@ -7,12 +7,17 @@ package models;
 /**
  *
  * @author juans
+ * 
+ * Abstract class representing a User.
+ * 
  */
-
-public class Child extends User {
-    public Child() {
-        this.type = "Child";
-        this.discount = 500;
+/**
+ * Class representing an Adult user.
+ */
+class Adult extends User {
+    public Adult() {
+        this.type = "Adult";
+        this.discount = 0;
     }
     
     @Override

@@ -7,7 +7,22 @@ package models;
 /**
  *
  * @author juans
+ *
+ *
+ * Class representing a Movie.
  */
-public class Movie {
+class Movie {
+    private int baseCost;
     
+    public Movie(int baseCost) {
+        this.baseCost = baseCost;
+    }
+    
+    /**
+     * Calculates the price of the movie.
+     * @return the base cost of the movie.
+     */
+    public int calculatePrice() {
+        return this.baseCost;
+    }
 }
