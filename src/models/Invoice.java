@@ -4,6 +4,9 @@
  */
 package models;
 
+import java.util.ArrayList;
+import java.util.List;
+
 /**
  *
  * @author juans
@@ -11,9 +14,9 @@ package models;
  *
  * Class representing an Invoice.
  */
-class Invoice {
+public class Invoice {
     private int total;
-    private List<Ticket> tickets;
+    private final List<Ticket> tickets;
     
     public Invoice() {
         this.tickets = new ArrayList<>();

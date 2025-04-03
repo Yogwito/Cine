@@ -11,7 +11,7 @@ package models;
  *
  * Class representing a Movie.
  */
-class Movie {
+public class Movie {
     private int baseCost;
     
     public Movie(int baseCost) {

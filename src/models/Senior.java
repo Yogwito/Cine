@@ -11,7 +11,7 @@ package models;
  *
  * Class representing a Senior user.
  */
-class Senior extends User {
+public class Senior extends User {
     public Senior() {
         this.type = "Senior";
         this.discount = 1000;

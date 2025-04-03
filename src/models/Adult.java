@@ -14,7 +14,7 @@ package models;
 /**
  * Class representing an Adult user.
  */
-class Adult extends User {
+public class Adult extends User {
     public Adult() {
         this.type = "Adult";
         this.discount = 0;

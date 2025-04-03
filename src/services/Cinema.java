@@ -4,7 +4,16 @@
  */
 package services;
 
+import functions.Function;
+import models.User;
+import models.Invoice;
+import models.Movie;
+import models.Ticket;
+        
 /**
+ * Class representing a Cinema.
+ */
+public /**
  * Class representing a Cinema.
  */
 class Cinema {
@@ -20,3 +29,19 @@ class Cinema {
         invoice.addTicket(ticket);
     }
    
+    /**
+     * Generates a new invoice.
+     * @return a new invoice instance.
+     */
+    public Invoice generateInvoice() {
+        return new Invoice();
+    }
+   
+    public void manageMovies() {
+        // Implementation for movie management
+    }
+   
+    public void manageUsers() {
+        // Implementation for user management
+    }
+}

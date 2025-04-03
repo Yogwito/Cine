@@ -11,7 +11,7 @@ package functions;
 /**
  * Class representing a Morning Function with a 50% discount.
  */
-class MorningFunction extends Function {
+public class MorningFunction extends Function {
     @Override
     public int applyDiscount(int price) {
         return price / 2;

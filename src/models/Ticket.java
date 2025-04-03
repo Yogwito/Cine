@@ -4,16 +4,18 @@
  */
 package models;
 
+import functions.Function;
+
 /**
  *
  * @author juans
  *
  * Class representing a Ticket.
  */
-class Ticket {
-    private Movie movie;
-    private Function function;
-    private int finalPrice;
+public class Ticket {
+    public Movie movie;
+    public Function function;
+    public int finalPrice;
     
     public Ticket(Movie movie, Function function, User user) {
         this.movie = movie;

@@ -11,7 +11,7 @@ package models;
  *
  * Class representing a Child user.
  */
-class Child extends User {
+public class Child extends User {
     public Child() {
         this.type = "Child";
         this.discount = 500;

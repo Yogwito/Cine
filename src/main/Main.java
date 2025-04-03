@@ -4,6 +4,16 @@
  */
 package main;
 
+import services.Cinema;
+import models.Invoice;
+import models.Movie;
+import functions.Function;
+import functions.AfternoonFunction;
+import functions.MorningFunction;
+import models.User;
+import models.Child;
+import models.Adult;
+
 /**
  * Main class to run the cinema simulation.
  */
