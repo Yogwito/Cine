@@ -5,15 +5,13 @@
 package functions;
 
 /**
- *
- * @author User
+ * Class representing a Night Function with no discount.
  */
-/**
- * Class representing a Morning Function with a 50% discount.
- */
-public class MorningFunction extends Function {
+public class NightFunction extends Function {
+    private final int discount = 0; // 0%
+    
     @Override
     public int applyDiscount(int price) {
-        return price / 2;
+        return price;
     }
 }

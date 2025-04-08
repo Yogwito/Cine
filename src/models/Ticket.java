@@ -4,25 +4,35 @@
  */
 package models;
 
+import exceptions.TicketInvalidException;
 import functions.Function;
 
 /**
  *
  * @author juans
  *
- * Class representing a Ticket.
+ *
  */
 public class Ticket {
-    public Movie movie;
-    public Function function;
-    public int finalPrice;
+    private Movie movie;
+    private Function function;
+    private int finalPrice;
     
     public Ticket(Movie movie, Function function, User user) {
+        if (movie == null || function == null || user == null) {
+            throw new TicketInvalidException("Cannot create a ticket with null data");
+        }
+        
         this.movie = movie;
         this.function = function;
         int basePrice = movie.calculatePrice();
-        int discountedPrice = function.applyDiscount(basePrice);
-        this.finalPrice = discountedPrice - user.calculateDiscount();
+        int functionDiscountedPrice = function.applyDiscount(basePrice);
+        this.finalPrice = functionDiscountedPrice - user.calculateDiscount();
+        
+        // Ensure price is never negative
+        if (this.finalPrice < 0) {
+            this.finalPrice = 0;
+        }
     }
     
     /**

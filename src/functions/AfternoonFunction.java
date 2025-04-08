@@ -7,13 +7,16 @@ package functions;
 /**
  *
  * @author User
- */
-/**
+ *
+ *
  * Class representing an Afternoon Function with a 10% discount.
  */
+
 public class AfternoonFunction extends Function {
+    private final int discount = 10; // 10%
+    
     @Override
     public int applyDiscount(int price) {
-        return (int) (price * 0.9);
+        return price * (100 - discount) / 100;
     }
 }
