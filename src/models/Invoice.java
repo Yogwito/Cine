@@ -6,6 +6,8 @@ package models;
 
 import java.util.ArrayList;
 import java.util.List;
+import exceptions.TicketInvalidException;
+
 
 /**
  *
@@ -13,6 +15,7 @@ import java.util.List;
  *
  *
  * Class representing an Invoice.
+ *
  */
 public class Invoice {
     private int total;
@@ -27,6 +30,9 @@ public class Invoice {
      * @param ticket the ticket to add.
      */
     public void addTicket(Ticket ticket) {
+        if (ticket == null) {
+            throw new TicketInvalidException("Cannot add a null ticket");
+        }
         this.tickets.add(ticket);
     }
     
@@ -35,7 +41,10 @@ public class Invoice {
      * @return the total amount.
      */
     public int calculateTotal() {
-        this.total = tickets.stream().mapToInt(Ticket::getFinalPrice).sum();
+        this.total = 0;
+        for (Ticket ticket : tickets) {
+            this.total += ticket.getFinalPrice();
+        }
         return total;
     }
 }
